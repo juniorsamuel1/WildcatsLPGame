@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio dos Princípios - GQA</title>
+    <link rel="icon" href="Logo-Wildcats.svg" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ========================================================== -->
+    <!-- TELA 1: START SCREEN                                       -->
+    <!-- ========================================================== -->
+    <div id="start-screen" class="screen active">
+        <div class="pixel-box game-container">
+            <div id="logo-placeholder">
+                <img src="wildcats-leadership-principles.svg" alt="Logo">
+            </div>
+            
+            <h1>MUNDO 1: Desafio Legal Risk</h1>
+            <!-- Atualizado para 5 desafios -->
+            <p>Use os Princípios de Liderança <br> para vencer os 5 desafios!</p>
+            
+            <!-- Mapa atualizado para 5 níveis -->
+            <div class="game-map">
+                <div class="map-node map-start">Start</div>
+                <div class="map-path"></div>
+                <div class="map-node map-level">1</div>
+                <div class="map-path"></div>
+                <div class="map-node map-level">2</div>
+                <div class="map-path"></div>
+                <div class="map-node map-level">3</div>
+                <div class="map-path"></div>
+                <div class="map-node map-level">4</div>
+                <div class="map-path"></div>
+                <div class="map-node map-level">5</div>
+                <div class="map-path"></div>
+                <div class="map-node map-boss"><span>Boss</span></div>
+            </div>
+            
+            <button id="start-game-btn" class="pixel-button">Iniciar Jogo!</button>
+        </div>
+    </div>
+
+    <!-- ========================================================== -->
+    <!-- TELA 2: APRESENTAÇÃO DO CENÁRIO                            -->
+    <!-- ========================================================== -->
+    <div id="scenario-screen" class="screen">
+        <div class="pixel-box game-container scenario-dialog">
+            <h2 id="scenario-title">Carregando Nível...</h2>
+            
+            <div class="scenario-image-placeholder">
+                <img id="scenario-img" src="" alt="Imagem do Cenário">
+            </div>
+            
+            <p id="scenario-full-text">Carregando a história...</p>
+            <button id="scenario-continue-btn" class="pixel-button">Resolver!</button>
+        </div>
+    </div>
+
+    <!-- ========================================================== -->
+    <!-- TELA 3: O JOGO (Drag-and-Drop)                             -->
+    <!-- ========================================================== -->
+    <div id="game-screen" class="screen">
+        <div class="game-container"> 
+            <header>
+                <h1 id="game-scenario-task">Qual sua decisão?</h1>
+            </header>
+
+            <main class="game-board">
+                <section class="drop-column pixel-box">
+                    <h3>Mesa de decisão:</h3>
+                    <p>Arraste 3 princípios-chave para cá.</p>
+                    <div id="drop-zone-container">
+                        <div class="drop-zone" data-drop-id="1"></div>
+                        <div class="drop-zone" data-drop-id="2"></div>
+                        <div class="drop-zone" data-drop-id="3"></div>
+                    </div>
+                    <button id="check-answer-btn" class="pixel-button">Analisar decisão</button>
+                    <button id="next-scenario-btn" class="pixel-button" style="display: none;">Próximo nível</button>
+                </section>
+
+                <section class="principles-column pixel-box">
+                    <h3>Princípios (Itens):</h3>
+                    <div id="principles-toolbox">
+                        </div>
+                    
+                    <div class="button-container">
+                        <button id="back-to-scenario-btn" class="pixel-button secondary">Voltar</button>
+                        <button id="clear-drops-btn" class="pixel-button secondary">Limpar</button>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- ========================================================== -->
+    <!-- TELA 4: CARTA FINAL                                        -->
+    <!-- ========================================================== -->
+    <div id="final-screen" class="screen">
+        <div class="pixel-box game-container">
+            <h2>Nós vencemos o desafio!</h2>
+            
+            <div class="victory-gif-placeholder">
+                <img id="victory-gif" src="avatar-star-arcade.gif" alt="GIF de Comemoração">
+            </div>
+            
+            <p>Lembre-se: a mágica acontece quando usamos os princípios em conjunto. Eles são um documento vivo!</p>
+            
+            <div class="charter-text">
+                <h3>Nossos Princípios</h3>
+                <p>Aqui no Grupo QuintoAndar, acreditamos que a forma como fazemos as coisas e quem está conosco é tão importante quanto o que estamos tentando alcançar. Por isso, dedicamos tempo para criar um conjunto de princípios que nos guiam e alinham o nosso “como”.<br><br>
+                    Os Leadership Principles do Grupo QuintoAndar foram desenvolvidos para guiar a forma como queremos pensar, trabalhar, e tomar decisões. Usaremos esses princípios ao discutir ideias, buscar soluções, priorizar, contratar, promover, etc.<br><br>
+                    No GQA acreditamos no mindset de liderança aplicado a todos os níveis, seja você líder de pessoas, times ou contribuidor individual. Você é sempre um líder de si mesmo e deve sempre manter essa mentalidade. Assim, nossos princípios de liderança se aplicam a todos do GQA.<br><br>
+                    Os Leadership Principles devem sempre ser usados em conjunto, pois são complementares entre si, a sinergia entre todos é fundamental. Nenhum deles deve ser usado isoladamente, sob o risco de nos confundir. A mágica acontece quando encontramos o equilíbrio certo entre todos eles, e esse deve ser nosso objetivo a cada dia e todos os dias.<br><br>
+                    Esses princípios são um documento vivo, assim como deve ser nossa cultura. Na GQA, todos adicionam à nossa cultura, o tempo todo. Portanto, à medida que o negócio e as pessoas crescem e evoluem, nossos princípios também devem evoluir.</p>
+            </div>
+            <button id="restart-game-btn" class="pixel-button">Jogar Novamente</button>
+        </div>
+    </div>
+
+    <!-- ========================================================== -->
+    <!-- MODAL DE FEEDBACK                                          -->
+    <!-- ========================================================== -->
+    <div id="feedback-modal" class="modal-overlay" style="display: none;">
+        <div class="pixel-box modal-content">
+            <span id="close-modal" class="modal-close">&times;</span>
+            <h2 id="modal-title">Análise do nível</h2>
+            
+            <div id="modal-feedback-header">
+                </div>
+            
+            <div class="modal-flex-body">
+                <div class="modal-col-left">
+                    <div id="modal-feedback-text">
+                        </div>
+                    
+                    <div class="enemy-gif-area">
+                        <div class="enemy-gif-placeholder">
+                            <img id="enemy-gif-img" src="" alt="GIF do Inimigo">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-col-right">
+                    <div id="modal-enemy-box" class="enemy-box">
+                        <h4>Desafio do nível:</h4>
+                        <p id="modal-enemy-text"></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <!-- ========================================================== -->
+    <!-- MODAL DE DEFINIÇÃO (INDIVIDUAL)                            -->
+    <!-- ========================================================== -->
+    <div id="principle-definition-modal" class="modal-overlay" style="display: none;">
+        <div class="pixel-box modal-content small">
+            <span id="close-definition-modal" class="modal-close">&times;</span>
+            <h2 id="definition-modal-title">Definição</h2>
+            <div class="definitions-list">
+                <p id="definition-modal-text"></p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ========================================================== -->
+    <!-- ARQUIVOS DE ÁUDIO                                          -->
+    <!-- ========================================================== -->
+    <audio id="start-sound" src="start.wav" preload="auto"></audio>
+    <audio id="feedback-sound" src="feedback.wav" preload="auto"></audio>
+    <audio id="final-sound" src="final.wav" preload="auto"></audio>
+
+    <!-- ========================================================== -->
+    <!-- CONTAINERS PARA ELEMENTOS DINÂMICOS                 -->
+    <!-- ========================================================== -->
+    <div id="floating-container" class="floating-elements">
+        <!-- JS vai popular isso -->
+    </div>
+    
+    <div id="footer-container" class="footer-elements">
+        <!-- O Chão Replicável -->
+        <div id="footer-ground"></div>
+        <!-- Itens (personagens) que ficam em cima do chão -->
+        <div id="footer-items-container">
+            <!-- JS vai popular isso -->
+        </div>
+    </div>
+
+    <!-- ========================================================== -->
+    <!-- AUTORIA                                             -->
+    <!-- ========================================================== -->
+    <footer class="site-credit">
+        Criado por Samuel Júnior (2025)
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

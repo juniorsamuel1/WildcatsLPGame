@@ -1,0 +1,613 @@
+/* ========================================================== */
+/* ESTÉTICA GERAL                                             */
+/* ========================================================== */
+
+html {
+    font-size: 13px; 
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'VT323', monospace;
+    font-size: 1.3rem; 
+    background-color: #049CD8; 
+    color: #fff;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; 
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    transition: background-image 0.5s ease-in-out;
+    position: relative; 
+}
+
+/* Filtro de fundo para legibilidade */
+body::after {
+    content: '';
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2); 
+    z-index: -1; 
+    pointer-events: none; 
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Press Start 2P', cursive;
+    color: #fff;
+    text-shadow: 2px 2px #000;
+}
+h1 { font-size: 1.4rem; }
+h2 { font-size: 1.2rem; }
+h3 { font-size: 1.0rem; }
+p {
+    margin-bottom: 20px;
+}
+
+.pixel-box {
+    background-color: #2e628ef2;
+    border: 2px solid #ffffff;
+    padding: 25px;
+    box-shadow: 3px 3px 0px #000;
+}
+
+.pixel-button {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #43B047; 
+    color: white;
+    border: 2px solid #000;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-shadow: 2px 2px #000;
+    box-shadow: 2px 2px 0px #000;
+    transition: all 0.1s ease;
+}
+
+.pixel-button:hover {
+    background-color: #45a049;
+    box-shadow: 2px 2px 0px #000;
+    transform: translate(2px, 2px);
+}
+.pixel-button:active {
+    background-color: #3e8e41;
+    box-shadow: 0px 0px 0px #000;
+    transform: translate(2px, 2px);
+}
+
+/* ========================================================== */
+/* GERENCIADOR DE TELAS (Transição)                           */
+/* ========================================================== */
+.screen {
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+    display: none; 
+}
+.screen.active {
+    opacity: 1;
+    visibility: visible;
+    display: block; 
+}
+
+.game-container {
+    max-width: 1100px;
+    width: auto; 
+    text-align: center;
+    margin: 20px auto; 
+    padding: 10px;
+}
+
+/* ========================================================== */
+/* TELA 1: START (Mapa)                                       */
+/* ========================================================== */
+#logo-placeholder {
+    max-width: 250px; 
+    height: auto; 
+    margin: 0 auto 30px auto;
+}
+
+#logo-placeholder img {
+    width: 100%; 
+    height: auto; 
+    image-rendering: pixelated; 
+    border: 2px solid #000;
+    box-shadow: 3px 3px 0px #000;
+    padding: 10px;
+}
+
+.game-map {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+    flex-wrap: wrap; 
+}
+.map-node {
+    width: 60px; height: 60px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.9rem;
+    color: #000;
+    box-shadow: 2px 2px 0px #000;
+}
+.map-start {
+    background-color: #43B047; /* Verde */
+    border-radius: 10px; /* Quadrado */
+    color: #fff;
+}
+.map-level {
+    background-color: #FBD000; /* Amarelo */
+}
+.map-boss {
+    background-color: #E52521; /* Vermelho */
+    width: 70px; height: 70px;
+}
+.map-boss span {
+    color: #fff;
+    font-size: 0.9rem;
+    text-shadow: 2px 2px #000;
+}
+.map-path {
+    width: 60px; height: 5px;
+    border-top: 5px dashed #000;
+}
+
+
+/* ========================================================== */
+/* TELA 2: CENÁRIO                                            */
+/* ========================================================== */
+.scenario-dialog {
+    text-align: left;
+}
+.scenario-image-placeholder {
+    width: 100%;
+    height: 250px;
+    background-color: #000;
+    border: 2px solid #fff;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#scenario-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    image-rendering: pixelated;
+}
+
+#scenario-full-text {
+    font-size: 1.6rem;
+    color: #fff;
+    min-height: 80px; 
+}
+#scenario-continue-btn {
+    display: block;
+    margin: 20px auto 0 auto;
+}
+
+/* ========================================================== */
+/* TELA 3: JOGO (Layout Fixo)                                 */
+/* ========================================================== */
+.game-board {
+    display: flex;
+    justify-content: center; 
+    gap: 25px;
+    flex-wrap: wrap; 
+    align-items: flex-start;
+}
+.drop-column {
+    flex-grow: 1;
+    flex-basis: 350px; 
+    max-width: 400px;
+}
+.principles-column {
+    flex-grow: 2; 
+    flex-basis: 500px; 
+    max-width: 600px; 
+}
+.drop-column .pixel-button {
+    display: block;
+    margin: 20px auto 0 auto; 
+}
+.drop-column h3, .principles-column h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+#drop-zone-container {
+    padding: 10px;
+    background-color: rgba(0,0,0,0.2);
+    min-height: 220px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.drop-zone {
+    border: 2px dashed #fff;
+    flex-basis: 60px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0; 
+}
+.drop-zone:last-child {
+    margin-bottom: 0;
+}
+.drop-zone-text {
+    padding: 12px;
+    font-size: 1rem;
+    color: #ccc;
+}
+.principle-card.dropped {
+    width: 100%; 
+    height: 100%; 
+    margin: 0;
+    padding: 10px; 
+    background-color: #ccc; 
+    color: #555;
+    box-shadow: none; 
+    cursor: grab; 
+}
+
+
+#principles-toolbox {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 8px; 
+    min-height: 220px;
+    align-content: start; 
+}
+.principle-card {
+    background-color: #FBD000; 
+    color: #000;
+    padding: 10px;
+    border: 2px solid #000;
+    box-shadow: 2px 2px 0px #000;
+    font-weight: bold;
+    cursor: grab;
+    text-align: center;
+    transition: all 0.1s ease;
+    position: relative;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    min-height: 40px; 
+}
+.principle-card:hover { background-color: #e29400; }
+.principle-card.dragging { 
+    opacity: 0.5; 
+    background: #fff;
+}
+
+.principle-info-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    background-color: #5ba8ff;
+    color: #fff;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    font-style: italic;
+    border-radius: 50%;
+    border: 2px solid #000;
+    cursor: help;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    line-height: 1; 
+}
+.principle-info-icon:hover {
+    background-color: #4a90e2;
+}
+
+.principles-column .button-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
+}
+.principles-column .pixel-button.secondary {
+    background-color: #5ba8ff; /* Azul */
+    font-size: 0.8rem;
+    padding: 10px;
+    flex-grow: 1; 
+}
+.principles-column .pixel-button.secondary:hover {
+    background-color: #4a90e2;
+}
+
+/* ========================================================== */
+/* TELA 4: CARTA FINAL                                        */
+/* ========================================================== */
+.charter-text {
+    background-color: rgba(0,0,0,0.2);
+    border: 2px solid #000;
+    padding: 15px;
+    margin: 20px 0;
+    text-align: left;
+    max-height: 300px;
+    overflow-y: auto;
+    font-size: 1.2rem;
+}
+.victory-gif-placeholder {
+    margin: 20px auto;
+    max-width: 60px;
+    line-height: 0; 
+}
+.victory-gif-placeholder img {
+    width: 100%;
+    height: auto;
+    display: block;
+    image-rendering: pixelated;
+}
+
+/* ========================================================== */
+/* MODAIS (FEEDBACK E DEFINIÇÕES)                             */
+/* ========================================================== */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none; 
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+}
+.modal-content {
+    width: 100%;
+    max-width: 1100px;
+    position: relative;
+    padding-bottom: 20px; 
+    max-height: 90vh;
+    overflow-y: auto; 
+}
+.modal-content.small {
+    max-width: 500px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px; right: 20px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    text-shadow: 2px 2px #000;
+}
+.modal-close:hover { color: #FBD000; }
+
+#modal-feedback-header {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px dashed #FBD000;
+}
+#modal-feedback-header span {
+    background-color: #FBD000;
+    color: #000;
+    padding: 5px 8px;
+    margin-right: 10px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem;
+}
+
+.modal-flex-body {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px;
+}
+.modal-col-left {
+    flex: 2; 
+    min-width: 300px;
+    display: flex; 
+    flex-direction: column; 
+}
+.modal-col-right {
+    flex: 1; 
+    min-width: 250px;
+}
+
+#modal-feedback-text {
+    font-size: 1.3rem; 
+    text-align: left;
+    margin-bottom: 20px;
+    flex-grow: 1; 
+}
+
+.enemy-box {
+    background-color: rgba(0,0,0,0.3);
+    border: 2px dashed #E52521;
+    padding: 15px;
+    text-align: left;
+}
+.enemy-box h4 {
+    color: #E52521;
+    margin-top: 0;
+    font-size: 1rem;
+}
+.enemy-gif-area {
+    display: flex;
+    justify-content: flex-start; 
+    margin-top: 0px;
+}
+.enemy-gif-placeholder {
+    border: 2px solid #ffffff;
+    background-color: rgba(0,0,0,0.3);
+    max-width: 120px; 
+    height: auto;
+}
+#enemy-gif-img {
+    width: 100%;
+    height: auto;
+    image-rendering: pixelated;
+    display: block;
+}
+
+.definitions-list {
+    text-align: left;
+    font-size: 1.1rem; 
+    line-height: 1.4;
+    max-height: 400px;
+    overflow-y: auto;
+    background-color: rgba(0,0,0,0.2);
+    padding: 15px;
+}
+.definitions-list p {
+    margin-bottom: 15px;
+}
+.definitions-list p:last-child {
+    margin-bottom: 0;
+}
+
+/* ========================================================== */
+/* RESPONSIVIDADE                                             */
+/* ========================================================== */
+@media (max-width: 800px) {
+    h1 { font-size: 1.5rem; }
+    h2 { font-size: 1.2rem; }
+    body { font-size: 1.2rem; }
+    
+    .game-board {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .drop-column, .principles-column {
+        width: 100%;
+        max-width: 500px; 
+        flex-basis: auto;
+    }
+    
+    .map-path { width: 40px; }
+    .map-node { width: 50px; height: 50px; font-size: 1rem;}
+}
+
+/* ========================================================== */
+/* ELEMENTOS DE CENÁRIO (Genéricos)                           */
+/* ========================================================== */
+.floating-elements {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1; 
+    overflow: hidden;
+}
+.floating-item { 
+    position: absolute;
+    animation: float 20s linear infinite;
+}
+.floating-item img {
+    width: 100%;
+    image-rendering: pixelated;
+    opacity: 0.8;
+}
+.item-1 { 
+    width: 80px;
+    top: 10%;
+    animation-duration: 25s;
+}
+.item-2 { 
+    width: 60px;
+    top: 20%;
+    animation-duration: 35s;
+    animation-delay: -5s;
+}
+@keyframes float {
+    0% { transform: translateX(100vw); }
+    100% { transform: translateX(-150px); } 
+}
+
+.footer-elements {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px; 
+    pointer-events: none;
+    z-index: 1; 
+    overflow: hidden;
+}
+
+/* Req 2: Chão Replicável (controlado pelo JS) */
+#footer-ground {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px; /* Altura do seu SVG */
+    background-repeat: repeat-x;
+    background-size: auto 50px; /* Altura fixa, largura automática */
+    image-rendering: pixelated;
+    /* Adiciona uma transição suave ao trocar o chão */
+    transition: background-image 0.5s ease-in-out;
+}
+
+#footer-items-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+#footer-items-container .footer-item {
+    position: absolute;
+}
+#footer-items-container .footer-item img {
+    width: 100%;
+    height: auto;
+    image-rendering: pixelated;
+    display: block;
+}
+
+.footer-item-1 { 
+    left: 10%;
+    width: 60px;
+    bottom: 40px; 
+}
+.footer-item-2 { 
+    right: 15%;
+    width: 80px;
+    bottom: 0px; 
+}
+
+
+/* ========================================================== */
+/* AUTORIA                                                    */
+/* ========================================================== */
+.site-credit {
+    position: fixed;
+    bottom: 5px;
+    right: 10px;
+    font-family: 'VT323', monospace;
+    font-size: 0.9rem;
+    color: #fff;
+    text-shadow: 1px 1px #000;
+    z-index: 5;
+    opacity: 0.7;
+}
