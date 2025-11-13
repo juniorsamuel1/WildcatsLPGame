@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
             image: 'cenario-4.png', 
             background: 'background-4.png', 
             enemyGif: 'avatar-maria.png', 
-            floatingElements: '<div class="floating-item item-1"><img src="voo.gif" alt="Mario"></div><div class="floating-item item-2"><img src="voo.gif" alt="Voo"></div>',
+            floatingElements: '<div class="floating-item item-1"><img src="voo.gif" alt="Voo"></div><div class="floating-item item-2"><img src="voo.gif" alt="Voo"></div>',
             footerElements: '<div class="footer-item footer-item-1"><img src="princesa.gif" alt="Princesa"></div><div class="footer-item footer-item-2"><img src="pipe.png" alt="Cano"></div>',
             groundImage: 'cubo-5.png' // Chão do Nível 4
         },
