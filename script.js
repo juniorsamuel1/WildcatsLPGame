@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 1. O CONTEÚDO (Storytelling) ---
     
     const startScreenAssets = {
-        background: 'background-0.png',
+        background: 'fundo-geral.jpg',
         floatingElements: '<div class="floating-item item-1"><img src="cloud.png" alt="Nuvem"></div><div class="floating-item item-2"><img src="cloud.png" alt="Nuvem"></div>',
         footerElements: '<div class="footer-item footer-item-1"><img src="mario.gif" alt="Mario"></div><div class="footer-item footer-item-2"><img src="pipe.png" alt="Cano"></div>',
         groundImage: 'cubo-1.png' // Chão da tela inicial
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
             feedback: "É um equilíbrio clássico! 'Flexibilizar' nos termos propostos fere diretamente o <strong>Do what is right (lp8)</strong> e o <strong>Make it great</strong> (lp6), pois reduzimos a qualidade. Embora a intenção de <strong>Make it happen</strong> (lp5) seja boa, ela nunca deve sobrepor a ética e a qualidade da entrega. Propor uma força-tarefa ou negociar o prazo seria um caminho mais alinhado.",
             enemy: "<strong>O 'jeitinho'</strong>: Este inimigo tenta te convencer que 'Make it happen' (lp5) significa 'fazer a qualquer custo', ignorando o 'Do what is right' (lp8).",
             image: 'cenario-1.png', 
-            background: 'fundo-geral.jpg', 
+            background: 'background-0.png', 
             enemyGif: 'avatar-renata.png',
             floatingElements: '<div class="floating-item item-1"><img src="block.gif" alt="Block question"></div><div class="floating-item item-2"><img src="block.gif" alt="Block question"></div>',
             footerElements: '<div class="footer-item footer-item-1"><img src="yoshi.gif" alt="Yoshi"></div><div class="footer-item footer-item-2"><img src="pipe.png" alt="Cano"></div>',
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
             background: 'background-4.png', 
             enemyGif: 'avatar-maria.png', 
             floatingElements: '<div class="floating-item item-1"><img src="voo.gif" alt="Voo"></div><div class="floating-item item-2"><img src="voo.gif" alt="Voo"></div>',
-            footerElements: '<div class="footer-item footer-item-1"><img src="princesa.gif" alt="Princesa"></div><div class="footer-item footer-item-2"><img src="pipe.png" alt="Cano"></div>',
+            footerElements: '<div class="footer-item footer-item-1"><img src="bowser.gif" alt="Bowser"></div><div class="footer-item footer-item-2"><img src="pipe.png" alt="Cano"></div>',
             groundImage: 'cubo-5.png' // Chão do Nível 4
         },
         {
