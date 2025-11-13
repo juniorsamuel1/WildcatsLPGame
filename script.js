@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
             background: 'background-5.png', 
             enemyGif: 'avatar-caroline.png', 
             floatingElements: '<div class="floating-item item-1"><img src="coin.gif" alt="Coin"></div><div class="floating-item item-2"><img src="coin.gif" alt="Coin"></div>',
-            footerElements: '<div class="footer-item footer-item-1"><img src="luigi.gif" alt="Mushroom"></div><div class="footer-item footer-item-2"><img src="pipe.png" alt="Cano"></div>',
+            footerElements: '<div class="footer-item footer-item-1"><img src="avatar-bloopers.gif" alt="Bloopers"></div><div class="footer-item footer-item-2"><img src="pipe.png" alt="Cano"></div>',
             groundImage: 'cubo-6.png' // Chão do Nível 5
         }
     ];
