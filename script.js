@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 1. O CONTEÚDO (Storytelling) ---
     
     const startScreenAssets = {
-        background: 'fundo-geral.jpg',
+        background: 'background-0.png',
         floatingElements: '<div class="floating-item item-1"><img src="cloud.png" alt="Nuvem"></div><div class="floating-item item-2"><img src="cloud.png" alt="Nuvem"></div>',
         footerElements: '<div class="footer-item footer-item-1"><img src="mario.gif" alt="Mario"></div><div class="footer-item footer-item-2"><img src="pipe.png" alt="Cano"></div>',
         groundImage: 'cubo-1.png' // Chão da tela inicial
