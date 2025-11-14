@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             id: 4,
             title: "Nível 5: O cliente atritado",
-            story: "Um cliente liga para Legal Front, muito irritado. Ele não entende por que a diligência está 'acusando risco alto' e acusa o time de 'burocracia excessiva' e de tentar impedir η transação. A comunicação está difícil e ele está sendo rude.",
+            story: "Um cliente liga para Legal Front, muito irritado. Ele não entende por que a diligência está 'acusando risco alto' e acusa o time de 'burocracia excessiva' e de tentar impedir a transação. A comunicação está difícil e ele está sendo rude.",
             task: "Como o time de atendimento deve lidar com esse cliente?",
             feedback: "Situação difícil! É a hora de <strong>Delight Customers</strong> (lp1) não com o que ele quer (alteração na régua de risco), mas com o que ele precisa (clareza e segurança). Isso exige <strong>Dive deep</strong> (lp4) para entender a real dor dele (falta de compreensão sobre os nossos alinhamentos/racionais?) e <strong>Enjoy the ride</strong> (lp7), que significa liderar com empatia e manter a energia positiva, mesmo em momentos ruins, para desarmar o conflito.",
             challengeText: "O 'reativo': Este inimigo entra na defensiva ou responde de forma robótica, replicando modelos de redação. Ele não pratica a empatia (Enjoy the ride - lp7) e falha em traduzir a complexidade para o cliente (Delight Customers - lp1).",
