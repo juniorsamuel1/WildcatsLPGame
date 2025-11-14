@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
             story: "Uma diligência de imóvel está travada. Faltam documentos que o time não consegue encontrar e o vendedor diz serem 'difíceis de conseguir' e ele sugere 'deixar assim' e assinar com uma ressalva. O cliente interno (Comercial) está com pressa.",
             task: "Como o time deve atuar nesse cenário de 'deixar assim'?",
             feedback: "Aqui, o <strong>Aim high</strong> (lp2) nos desafia a não aceitar o 'status quo'. Devemos usar o <strong>Dive deep</strong> (lp4) para entender por que é difícil e buscar alternativas (outras fontes). Isso tudo é para <strong>Delight Customers</strong> (lp1), entregando a segurança e confiança que eles esperam de nós, e não somente uma 'ressalva' que transfere o risco.",
-            challengeText: "O 'status quo': Este inimigo aceita o 'sempre foi assim' ou o 'é muito difícil'. Ele nos impede de inovar (Aim high - lp2) e de buscar a fundo a melhor solution (Dive deep - lp4).",
+            challengeText: "O 'status quo': Este inimigo aceita o 'sempre foi assim' ou o 'é muito difícil'. Ele nos impede de inovar (Aim high - lp2) e de buscar a fundo a melhor solução (Dive deep - lp4).",
             image: 'cenario-2.png',
             background: 'background-2.png',
             analystImage: 'avatar-elen.png',
