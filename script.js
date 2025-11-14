@@ -6,21 +6,21 @@ document.addEventListener('DOMContentLoaded', () => {
         background: 'fundo-geral.jpg',
         floatingElements: '<div class="floating-item item-1"><img src="cloud.png" alt="Nuvem"></div><div class="floating-item item-2"><img src="cloud.png" alt="Nuvem"></div>',
         footerElements: '<div class="footer-item footer-item-1"><img src="mario.gif" alt="Mario"></div><div class="footer-item footer-item-2"><img src="pipe.png" alt="Cano"></div>',
-        groundImage: 'cubo-1.png' // Chão da tela inicial
+        groundImage: 'cubo-1.png' 
     };
     
     const finalScreenAssets = {
         background: 'grupo-quinto-andar.png',
         floatingElements: '<div class="floating-item item-1"><img src="item-final-1.png" alt=""></div>',
         footerElements: '<div class="footer-item footer-item-1"><img src="item-final-2.png" alt=""></div>',
-        groundImage: 'ground-final.svg' // Chão da tela final
+        groundImage: 'ground-final.svg' 
     };
 
     const scenarios = [
         {
             id: 0,
             title: "Nível 1: O atalho arriscado",
-            story: "Fim de mês, o volume de diligências está altíssimo! Um colega sugere 'flexibilizar a régua de risco' para um entendimento não habitual, mas só hoje, para bater a meta e 'fazer acontecer'. A pressão é grande…",
+            story: "Fim de mês, o volume de diligências está altíssimo! Um colega sugere 'flexibilizar a régua de risco' para um entendimento não habitual e pessoal, mas só hoje, para bater a meta e 'fazer acontecer'. O analista diz não ver riscos naquele caso. A pressão é grande…",
             task: "O que fazer diante da sugestão de 'flexibilizar a régua'?",
             feedback: "É um equilíbrio clássico! 'Flexibilizar' nos termos propostos fere diretamente o <strong>Do what is right (lp8)</strong> e o <strong>Make it great</strong> (lp6), pois reduzimos a qualidade. Embora a intenção de <strong>Make it happen</strong> (lp5) seja boa, ela nunca deve sobrepor a ética e a qualidade da entrega. Propor uma força-tarefa ou negociar o prazo seria um caminho mais alinhado.",
             enemy: "<strong>O 'jeitinho'</strong>: Este inimigo tenta nos convencer que 'Make it happen' (lp5) significa 'fazer a qualquer custo', ignorando o 'Do what is right' (lp8).",
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
             enemyGif: 'avatar-renata.png',
             floatingElements: '<div class="floating-item item-1"><img src="block.gif" alt="Block question"></div><div class="floating-item item-2"><img src="block.gif" alt="Block question"></div>',
             footerElements: '<div class="footer-item footer-item-1"><img src="yoshi.gif" alt="Yoshi"></div><div class="footer-item footer-item-2"><img src="pipe.png" alt="Cano"></div>',
-            groundImage: 'cubo-2.png' // Chão do Nível 1
+            groundImage: 'cubo-2.png' 
         },
         {
             id: 1,
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
             enemyGif: 'avatar-elen.png',
             floatingElements: '<div class="floating-item item-1"><img src="boo.gif" alt="Boo"></div><div class="floating-item item-2"><img src="boo.gif" alt="Boo"></div>',
             footerElements: '<div class="footer-item footer-item-1"><img src="luigi.gif" alt="Luigi"></div><div class="footer-item footer-item-2"><img src="pipe.png" alt="Cano"></div>',
-            groundImage: 'cubo-3.png' // Chão do Nível 2
+            groundImage: 'cubo-3.png' 
         },
         {
             id: 2,
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
             enemyGif: 'avatar-uriani.png',
             floatingElements: '<div class="floating-item item-1"><img src="Koopa-Troop.gif" alt="Koopa"></div><div class="floating-item item-2"><img src="Koopa-Troop.gif" alt="Koopa"></div>',
             footerElements: '<div class="footer-item footer-item-1"><img src="princesa.gif" alt="Princesa"></div><div class="footer-item footer-item-2"><img src="pipe.png" alt="Cano"></div>',
-            groundImage: 'cubo-4.png' // Chão do Nível 3
+            groundImage: 'cubo-4.png' 
         },
         {
             id: 3,
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
             enemyGif: 'avatar-maria.png', 
             floatingElements: '<div class="floating-item item-1"><img src="voo.gif" alt="Voo"></div><div class="floating-item item-2"><img src="voo.gif" alt="Voo"></div>',
             footerElements: '<div class="footer-item footer-item-1"><img src="bowser.gif" alt="Bowser"></div><div class="footer-item footer-item-2"><img src="pipe.png" alt="Cano"></div>',
-            groundImage: 'cubo-5.png' // Chão do Nível 4
+            groundImage: 'cubo-5.png' 
         },
         {
             id: 4,
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
             enemyGif: 'avatar-caroline.png', 
             floatingElements: '<div class="floating-item item-1"><img src="coin.gif" alt="Coin"></div><div class="floating-item item-2"><img src="coin.gif" alt="Coin"></div>',
             footerElements: '<div class="footer-item footer-item-1"><img src="avatar-bloopers.gif" alt="Bloopers"></div><div class="footer-item footer-item-2"><img src="pipe.png" alt="Cano"></div>',
-            groundImage: 'cubo-6.png' // Chão do Nível 5
+            groundImage: 'cubo-6.png' 
         }
     ];
 
@@ -196,6 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
         principleDefinitionModal.style.display = 'flex';
     }
 
+    // FUNÇÃO ATUALIZADA PARA SUPORTAR MOBILE (TOUCH)
     function initializeToolbox() {
         toolbox.innerHTML = ''; 
         principles.forEach(p => {
@@ -207,19 +208,28 @@ document.addEventListener('DOMContentLoaded', () => {
             
             const cardText = document.createElement('span');
             cardText.textContent = p.name;
+            // Importante: pointer-events none no texto evita conflitos de alvo no mobile
+            cardText.style.pointerEvents = 'none';
             card.appendChild(cardText);
             
             const infoIcon = document.createElement('i');
             infoIcon.className = 'principle-info-icon';
             infoIcon.textContent = 'i';
+            // Evento de clique para o ícone
             infoIcon.addEventListener('click', (e) => {
+                e.preventDefault();
                 e.stopPropagation(); 
                 showDefinitionModal(p.name, p.definition);
+            });
+            // Impede que o toque no ícone inicie o arrasto
+            infoIcon.addEventListener('touchstart', (e) => {
+                e.stopPropagation();
             });
             card.appendChild(infoIcon);
 
             toolbox.appendChild(card);
 
+            // --- LÓGICA DESKTOP (Mouse) ---
             card.addEventListener('dragstart', (e) => {
                 if (e.target.classList.contains('principle-info-icon')) {
                     e.preventDefault();
@@ -233,6 +243,106 @@ document.addEventListener('DOMContentLoaded', () => {
                 card.classList.remove('dragging');
                 draggedItem = null;
             });
+
+            // --- LÓGICA MOBILE (Touch) ---
+            let touchStartX = 0;
+            let touchStartY = 0;
+            let initialLeft = 0;
+            let initialTop = 0;
+
+            card.addEventListener('touchstart', (e) => {
+                if (e.target.classList.contains('principle-info-icon')) return;
+
+                draggedItem = card;
+                const touch = e.touches[0];
+                touchStartX = touch.clientX;
+                touchStartY = touch.clientY;
+
+                const rect = card.getBoundingClientRect();
+                initialLeft = rect.left;
+                initialTop = rect.top;
+
+                // Configura o card para mover livremente
+                card.style.position = 'fixed';
+                card.style.left = initialLeft + 'px';
+                card.style.top = initialTop + 'px';
+                card.style.zIndex = '1000';
+                card.style.width = rect.width + 'px';
+                card.classList.add('dragging');
+            }, { passive: false });
+
+            card.addEventListener('touchmove', (e) => {
+                if (!draggedItem) return;
+                e.preventDefault(); // Impede o scroll da tela
+
+                const touch = e.touches[0];
+                const deltaX = touch.clientX - touchStartX;
+                const deltaY = touch.clientY - touchStartY;
+
+                card.style.left = (initialLeft + deltaX) + 'px';
+                card.style.top = (initialTop + deltaY) + 'px';
+            }, { passive: false });
+
+            card.addEventListener('touchend', (e) => {
+                if (!draggedItem) return;
+
+                card.classList.remove('dragging');
+                card.style.zIndex = '';
+                
+                // Esconde momentaneamente para detectar o que está embaixo
+                card.style.display = 'none';
+                const touch = e.changedTouches[0];
+                const elementBelow = document.elementFromPoint(touch.clientX, touch.clientY);
+                card.style.display = 'flex';
+
+                const dropZone = elementBelow ? elementBelow.closest('.drop-zone') : null;
+                const toolboxZone = elementBelow ? elementBelow.closest('#principles-toolbox') : null;
+
+                // Reseta estilos de posição
+                card.style.position = '';
+                card.style.left = '';
+                card.style.top = '';
+                card.style.width = '';
+
+                if (dropZone) {
+                    // Lógica de Drop
+                    if (dropZone.children.length > 0 && !dropZone.children[0].classList.contains('drop-zone-text')) {
+                        // Devolve carta existente para toolbox
+                        const existingCard = dropZone.children[0];
+                        existingCard.classList.remove('dropped');
+                        toolbox.appendChild(existingCard);
+                    }
+                    dropZone.innerHTML = ''; 
+                    dropZone.appendChild(card);
+                    card.classList.add('dropped');
+                } else if (toolboxZone) {
+                     // Devolve para toolbox
+                     card.classList.remove('dropped');
+                     toolbox.appendChild(card);
+                } else {
+                    // Se soltou fora de área válida, retorna para onde estava
+                    // Se já estava numa dropzone, mantem lá. Se não, volta pra toolbox.
+                    if (!card.parentElement || !card.parentElement.classList.contains('drop-zone')) {
+                        card.classList.remove('dropped');
+                        toolbox.appendChild(card);
+                    }
+                }
+                
+                draggedItem = null;
+                refreshDropZonesText(); // Restaura os textos das zonas vazias
+            });
+        });
+    }
+
+    // Função auxiliar para restaurar textos das zonas (importante para o mobile)
+    function refreshDropZonesText() {
+        const dropZones = document.querySelectorAll('.drop-zone');
+        const texts = ['Princípio Primário', 'Princípio Secundário', 'Princípio Terciário'];
+        dropZones.forEach((zone, index) => {
+            if (zone.children.length === 0) {
+                const text = texts[index] || 'Slot';
+                zone.innerHTML = `<span class="drop-zone-text">${text}</span>`;
+            }
         });
     }
 
@@ -285,7 +395,7 @@ document.addEventListener('DOMContentLoaded', () => {
         playSound(feedbackSound);
     }
 
-    // --- 4. LÓGICA DE DRAG-AND-DROP ---
+    // --- 4. LÓGICA DE DRAG-AND-DROP (Desktop) ---
     dropZones.forEach(zone => {
         zone.addEventListener('dragover', (e) => {
             e.preventDefault(); 
@@ -409,7 +519,7 @@ document.addEventListener('DOMContentLoaded', () => {
     nextBtn.addEventListener('click', () => {
         modal.style.display = 'none'; 
         currentScenarioIndex++;
-        // Req 1: Agora verifica se é >= 5 (pois temos 5 cenários, index 0 a 4)
+        
         if (currentScenarioIndex >= scenarios.length) {
             // Fim de Jogo!
             showScreen('final-screen');

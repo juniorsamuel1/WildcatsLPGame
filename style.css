@@ -178,10 +178,10 @@ p {
 }
 .scenario-image-placeholder {
     width: 100%;
-    height: 250px;
+    height: 260px;
     background-color: #000;
     border: 2px solid #fff;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -196,11 +196,11 @@ p {
 #scenario-full-text {
     font-size: 1.6rem;
     color: #fff;
-    min-height: 80px; 
+    min-height: 60px; 
 }
 #scenario-continue-btn {
     display: block;
-    margin: 20px auto 0 auto;
+    margin: 0px auto 0 auto;
 }
 
 /* ========================================================== */
@@ -290,6 +290,11 @@ p {
     align-items: center;
     justify-content: center;
     min-height: 40px; 
+
+    /* CORREÇÃO DE ARRASTE E SELEÇÃO DE TEXTO */
+    user-select: none;          /* Impede selecionar texto no Desktop */
+    -webkit-user-select: none;  /* Safari / Chrome Mobile */
+    touch-action: none;         /* Impede scroll da tela ao arrastar item no Mobile */
 }
 .principle-card:hover { background-color: #e29400; }
 .principle-card.dragging { 
