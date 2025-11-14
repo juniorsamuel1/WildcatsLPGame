@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         groundImage: 'ground-final.svg' 
     };
 
+    // ATUALIZADO: 'challengeText' agora contém os textos completos originais
     const scenarios = [
         {
             id: 0,
@@ -23,10 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
             story: "Fim de mês, o volume de diligências está altíssimo! Um colega sugere 'flexibilizar a régua de risco' para um entendimento não habitual e pessoal, mas só hoje, para bater a meta e 'fazer acontecer'. O analista diz não ver riscos naquele caso. A pressão é grande…",
             task: "O que fazer diante da sugestão de 'flexibilizar a régua'?",
             feedback: "É um equilíbrio clássico! 'Flexibilizar' nos termos propostos fere diretamente o <strong>Do what is right (lp8)</strong> e o <strong>Make it great</strong> (lp6), pois reduzimos a qualidade. Embora a intenção de <strong>Make it happen</strong> (lp5) seja boa, ela nunca deve sobrepor a ética e a qualidade da entrega. Propor uma força-tarefa ou negociar o prazo seria um caminho mais alinhado.",
-            enemy: "<strong>O 'jeitinho'</strong>: Este inimigo tenta nos convencer que 'Make it happen' (lp5) significa 'fazer a qualquer custo', ignorando o 'Do what is right' (lp8).",
+            challengeText: "O 'jeitinho': Este inimigo tenta nos convencer que 'Make it happen' (lp5) significa 'fazer a qualquer custo', ignorando o 'Do what is right' (lp8).",
             image: 'cenario-1.png', 
             background: 'background-0.png', 
-            enemyGif: 'avatar-renata.png',
+            analystImage: 'avatar-renata.png',
+            analystName: 'Renata',
             floatingElements: '<div class="floating-item item-1"><img src="block.gif" alt="Block question"></div><div class="floating-item item-2"><img src="block.gif" alt="Block question"></div>',
             footerElements: '<div class="footer-item footer-item-1"><img src="yoshi.gif" alt="Yoshi"></div><div class="footer-item footer-item-2"><img src="pipe.png" alt="Cano"></div>',
             groundImage: 'cubo-2.png' 
@@ -37,10 +39,11 @@ document.addEventListener('DOMContentLoaded', () => {
             story: "Uma diligência de imóvel está travada. Faltam documentos que o time não consegue encontrar e o vendedor diz serem 'difíceis de conseguir' e ele sugere 'deixar assim' e assinar com uma ressalva. O cliente interno (Comercial) está com pressa.",
             task: "Como o time deve atuar nesse cenário de 'deixar assim'?",
             feedback: "Aqui, o <strong>Aim high</strong> (lp2) nos desafia a não aceitar o 'status quo'. Devemos usar o <strong>Dive deep</strong> (lp4) para entender por que é difícil e buscar alternativas (outras fontes). Isso tudo é para <strong>Delight Customers</strong> (lp1), entregando a segurança e confiança que eles esperam de nós, e não somente uma 'ressalva' que transfere o risco.",
-            enemy: "<strong>O 'status quo'</strong>: Este inimigo aceita o 'sempre foi assim' ou o 'é muito difícil'. Ele nos impede de inovar (Aim high - lp2) e de buscar a fundo a melhor solução (Dive deep - lp4).",
+            challengeText: "O 'status quo': Este inimigo aceita o 'sempre foi assim' ou o 'é muito difícil'. Ele nos impede de inovar (Aim high - lp2) e de buscar a fundo a melhor solution (Dive deep - lp4).",
             image: 'cenario-2.png',
             background: 'background-2.png',
-            enemyGif: 'avatar-elen.png',
+            analystImage: 'avatar-elen.png',
+            analystName: 'Elen',
             floatingElements: '<div class="floating-item item-1"><img src="boo.gif" alt="Boo"></div><div class="floating-item item-2"><img src="boo.gif" alt="Boo"></div>',
             footerElements: '<div class="footer-item footer-item-1"><img src="luigi.gif" alt="Luigi"></div><div class="footer-item footer-item-2"><img src="pipe.png" alt="Cano"></div>',
             groundImage: 'cubo-3.png' 
@@ -51,10 +54,11 @@ document.addEventListener('DOMContentLoaded', () => {
             story: "Um analista comete um erro numa diligência que gera reclamação pública, retrabalho interno e DSAT. Ele está visivelmente desmotivado e com receio. O time todo percebeu.",
             task: "O analista errou e está desmotivado. Qual a prioridade?",
             feedback: "Esta é uma oportunidade de ouro para o <strong>Winning team</strong> (lp3). Em vez de focar na punição, focamos em criar um espaço de aprendizado. Isso se faz com <strong>Enjoy the ride</strong> (lp7), liderando com empatia e cuidando do time. O <strong>'make it happen'</strong> (lp5) aqui é 'assumir o erro com transparência, corrigir e aprender rápido', fortalecendo a confiança.",
-            enemy: "<strong>O 'chefe rígido'</strong>: Este inimigo foca na punição e não no aprendizado. Ele cria um ambiente tóxico e impede o time de se desenvolver (Winning team - lp3) e de curtir a jornada (Enjoy the ride - lp7).",
+            challengeText: "O 'chefe rígido': Este inimigo foca na punição e não no aprendizado. Ele cria um ambiente tóxico e impede o time de se desenvolver (Winning team - lp3) e de curtir a jornada (Enjoy the ride - lp7).",
             image: 'cenario-3.png',
             background: 'background-3.png',
-            enemyGif: 'avatar-uriani.png',
+            analystImage: 'avatar-uriani.png',
+            analystName: 'Uriani',
             floatingElements: '<div class="floating-item item-1"><img src="Koopa-Troop.gif" alt="Koopa"></div><div class="floating-item item-2"><img src="Koopa-Troop.gif" alt="Koopa"></div>',
             footerElements: '<div class="footer-item footer-item-1"><img src="princesa.gif" alt="Princesa"></div><div class="footer-item footer-item-2"><img src="pipe.png" alt="Cano"></div>',
             groundImage: 'cubo-4.png' 
@@ -65,10 +69,11 @@ document.addEventListener('DOMContentLoaded', () => {
             story: "Durante uma análise de rotina, você nota um pequeno erro formal em uma certidão emitida. Corrigir isso vai exigir contato com o time de Legal Docs e até aditivo, o que atrasará a entrega no SLA. Ninguém notou, e 'passaria batido'.",
             task: "Você gasta tempo corrigindo o pequeno erro ou entrega no prazo?",
             feedback: "Essa é a essência do <strong>Make it great</strong> (lp6). Líderes se recusam a baixar a qualidade para “tirar a tarefa da frente”. Isso só é possível quando aplicamos o <strong>Dive deep</strong> (lp4), operando nos detalhes que importam em vez de somente fazer uma análise superficial. E embora pareça pequeno e “passaria batido”, <strong>Do what is right</strong> (lp8) exige precisão, pois o “jeitinho” compromete a confiança. A melhor ação é corrigir, comunicando proativamente o atraso para alinhar as expectativas.",
-            enemy: "<strong>O 'tirador de tarefa'</strong>: Este inimigo só quer 'entregar'. Ele não se orgulha da qualidade (Make it great - lp6) e acha que pequenos erros não importam, o que pode comprometer a ética (Do what is right - lp8) a longo prazo.",
+            challengeText: "O 'tirador de tarefa': Este inimigo só quer 'entregar'. Ele não se orgulha da qualidade (Make it great - lp6) e acha que pequenos erros não importam, o que pode comprometer a ética (Do what is right - lp8) a longo prazo.",
             image: 'cenario-4.png', 
             background: 'background-4.png', 
-            enemyGif: 'avatar-maria.png', 
+            analystImage: 'avatar-maria.png',
+            analystName: 'Maria',
             floatingElements: '<div class="floating-item item-1"><img src="voo.gif" alt="Voo"></div><div class="floating-item item-2"><img src="voo.gif" alt="Voo"></div>',
             footerElements: '<div class="footer-item footer-item-1"><img src="bowser.gif" alt="Bowser"></div><div class="footer-item footer-item-2"><img src="pipe.png" alt="Cano"></div>',
             groundImage: 'cubo-5.png' 
@@ -76,13 +81,14 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             id: 4,
             title: "Nível 5: O cliente atritado",
-            story: "Um cliente liga para Legal Front, muito irritado. Ele não entende por que a diligência está 'acusando risco alto' e acusa o time de 'burocracia excessiva' e de tentar impedir a transação. A comunicação está difícil e ele está sendo rude.",
+            story: "Um cliente liga para Legal Front, muito irritado. Ele não entende por que a diligência está 'acusando risco alto' e acusa o time de 'burocracia excessiva' e de tentar impedir η transação. A comunicação está difícil e ele está sendo rude.",
             task: "Como o time de atendimento deve lidar com esse cliente?",
             feedback: "Situação difícil! É a hora de <strong>Delight Customers</strong> (lp1) não com o que ele quer (alteração na régua de risco), mas com o que ele precisa (clareza e segurança). Isso exige <strong>Dive deep</strong> (lp4) para entender a real dor dele (falta de compreensão sobre os nossos alinhamentos/racionais?) e <strong>Enjoy the ride</strong> (lp7), que significa liderar com empatia e manter a energia positiva, mesmo em momentos ruins, para desarmar o conflito.",
-            enemy: "<strong>O 'reativo'</strong>: Este inimigo entra na defensiva ou responde de forma robótica, replicando modelos de redação. Ele não pratica a empatia (Enjoy the ride - lp7) e falha em traduzir a complexidade para o cliente (Delight Customers - lp1).",
+            challengeText: "O 'reativo': Este inimigo entra na defensiva ou responde de forma robótica, replicando modelos de redação. Ele não pratica a empatia (Enjoy the ride - lp7) e falha em traduzir a complexidade para o cliente (Delight Customers - lp1).",
             image: 'cenario-5.png', 
             background: 'background-5.png', 
-            enemyGif: 'avatar-caroline.png', 
+            analystImage: 'avatar-caroline.png',
+            analystName: 'Caroline',
             floatingElements: '<div class="floating-item item-1"><img src="coin.gif" alt="Coin"></div><div class="floating-item item-2"><img src="coin.gif" alt="Coin"></div>',
             footerElements: '<div class="footer-item footer-item-1"><img src="avatar-bloopers.gif" alt="Bloopers"></div><div class="footer-item footer-item-2"><img src="pipe.png" alt="Cano"></div>',
             groundImage: 'cubo-6.png' 
@@ -135,8 +141,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('feedback-modal');
     const modalFeedbackHeader = document.getElementById('modal-feedback-header');
     const modalFeedbackText = document.getElementById('modal-feedback-text');
-    const modalEnemyText = document.getElementById('modal-enemy-text');
-    const enemyGifImg = document.getElementById('enemy-gif-img'); 
+    const modalChallengeText = document.getElementById('modal-challenge-text');
+    const analystImgDisplay = document.getElementById('analyst-img-display');
+    const analystNameDisplay = document.getElementById('analyst-name-display'); 
 
     // Elementos de Som
     const startSound = document.getElementById('start-sound');
@@ -146,7 +153,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Containers de elementos de cenário
     const floatingContainer = document.getElementById('floating-container');
     const footerItemsContainer = document.getElementById('footer-items-container');
-    // Req 2: Referência para o chão
     const footerGround = document.getElementById('footer-ground');
 
     // --- 3. FUNÇÕES PRINCIPAIS DO JOGO ---
@@ -176,15 +182,12 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error("Erro: Tela com ID", screenId, "não encontrada.");
         }
         
-        // Define assets específicos para telas não-cenário
         if (screenId === 'start-screen') {
             document.body.style.backgroundImage = `url('${startScreenAssets.background}')`;
-            // Req 2: Define o chão da tela inicial
             footerGround.style.backgroundImage = `url('${startScreenAssets.groundImage}')`;
             setScreenElements(startScreenAssets.floatingElements, startScreenAssets.footerElements);
         } else if (screenId === 'final-screen') {
             document.body.style.backgroundImage = `url('${finalScreenAssets.background}')`;
-            // Req 2: Define o chão da tela final
             footerGround.style.backgroundImage = `url('${finalScreenAssets.groundImage}')`;
             setScreenElements(finalScreenAssets.floatingElements, finalScreenAssets.footerElements);
         }
@@ -196,7 +199,6 @@ document.addEventListener('DOMContentLoaded', () => {
         principleDefinitionModal.style.display = 'flex';
     }
 
-    // FUNÇÃO ATUALIZADA PARA SUPORTAR MOBILE (TOUCH)
     function initializeToolbox() {
         toolbox.innerHTML = ''; 
         principles.forEach(p => {
@@ -208,20 +210,17 @@ document.addEventListener('DOMContentLoaded', () => {
             
             const cardText = document.createElement('span');
             cardText.textContent = p.name;
-            // Importante: pointer-events none no texto evita conflitos de alvo no mobile
             cardText.style.pointerEvents = 'none';
             card.appendChild(cardText);
             
             const infoIcon = document.createElement('i');
             infoIcon.className = 'principle-info-icon';
             infoIcon.textContent = 'i';
-            // Evento de clique para o ícone
             infoIcon.addEventListener('click', (e) => {
                 e.preventDefault();
                 e.stopPropagation(); 
                 showDefinitionModal(p.name, p.definition);
             });
-            // Impede que o toque no ícone inicie o arrasto
             infoIcon.addEventListener('touchstart', (e) => {
                 e.stopPropagation();
             });
@@ -245,24 +244,17 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             // --- LÓGICA MOBILE (Touch) ---
-            let touchStartX = 0;
-            let touchStartY = 0;
-            let initialLeft = 0;
-            let initialTop = 0;
+            let touchStartX = 0, touchStartY = 0, initialLeft = 0, initialTop = 0;
 
             card.addEventListener('touchstart', (e) => {
                 if (e.target.classList.contains('principle-info-icon')) return;
-
                 draggedItem = card;
                 const touch = e.touches[0];
                 touchStartX = touch.clientX;
                 touchStartY = touch.clientY;
-
                 const rect = card.getBoundingClientRect();
                 initialLeft = rect.left;
                 initialTop = rect.top;
-
-                // Configura o card para mover livremente
                 card.style.position = 'fixed';
                 card.style.left = initialLeft + 'px';
                 card.style.top = initialTop + 'px';
@@ -273,41 +265,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
             card.addEventListener('touchmove', (e) => {
                 if (!draggedItem) return;
-                e.preventDefault(); // Impede o scroll da tela
-
+                e.preventDefault(); 
                 const touch = e.touches[0];
                 const deltaX = touch.clientX - touchStartX;
                 const deltaY = touch.clientY - touchStartY;
-
                 card.style.left = (initialLeft + deltaX) + 'px';
                 card.style.top = (initialTop + deltaY) + 'px';
             }, { passive: false });
 
             card.addEventListener('touchend', (e) => {
                 if (!draggedItem) return;
-
                 card.classList.remove('dragging');
                 card.style.zIndex = '';
-                
-                // Esconde momentaneamente para detectar o que está embaixo
                 card.style.display = 'none';
                 const touch = e.changedTouches[0];
                 const elementBelow = document.elementFromPoint(touch.clientX, touch.clientY);
                 card.style.display = 'flex';
-
                 const dropZone = elementBelow ? elementBelow.closest('.drop-zone') : null;
-                const toolboxZone = elementBelow ? elementBelow.closest('#principles-toolbox') : null;
-
-                // Reseta estilos de posição
                 card.style.position = '';
                 card.style.left = '';
                 card.style.top = '';
                 card.style.width = '';
 
                 if (dropZone) {
-                    // Lógica de Drop
                     if (dropZone.children.length > 0 && !dropZone.children[0].classList.contains('drop-zone-text')) {
-                        // Devolve carta existente para toolbox
                         const existingCard = dropZone.children[0];
                         existingCard.classList.remove('dropped');
                         toolbox.appendChild(existingCard);
@@ -315,26 +296,18 @@ document.addEventListener('DOMContentLoaded', () => {
                     dropZone.innerHTML = ''; 
                     dropZone.appendChild(card);
                     card.classList.add('dropped');
-                } else if (toolboxZone) {
-                     // Devolve para toolbox
-                     card.classList.remove('dropped');
-                     toolbox.appendChild(card);
                 } else {
-                    // Se soltou fora de área válida, retorna para onde estava
-                    // Se já estava numa dropzone, mantem lá. Se não, volta pra toolbox.
                     if (!card.parentElement || !card.parentElement.classList.contains('drop-zone')) {
                         card.classList.remove('dropped');
                         toolbox.appendChild(card);
                     }
                 }
-                
                 draggedItem = null;
-                refreshDropZonesText(); // Restaura os textos das zonas vazias
+                refreshDropZonesText(); 
             });
         });
     }
 
-    // Função auxiliar para restaurar textos das zonas (importante para o mobile)
     function refreshDropZonesText() {
         const dropZones = document.querySelectorAll('.drop-zone');
         const texts = ['Princípio Primário', 'Princípio Secundário', 'Princípio Terciário'];
@@ -358,7 +331,6 @@ document.addEventListener('DOMContentLoaded', () => {
         gameScenarioTaskEl.textContent = scenario.task;
         scenarioImg.src = scenario.image;
         document.body.style.backgroundImage = `url('${scenario.background}')`;
-        // Req 2: Define o chão do cenário
         footerGround.style.backgroundImage = `url('${scenario.groundImage}')`;
         
         setScreenElements(scenario.floatingElements, scenario.footerElements);
@@ -388,8 +360,23 @@ document.addEventListener('DOMContentLoaded', () => {
         
         modalFeedbackHeader.innerHTML = headerHtml;
         modalFeedbackText.innerHTML = scenario.feedback;
-        modalEnemyText.innerHTML = scenario.enemy;
-        enemyGifImg.src = scenario.enemyGif;
+        
+        // Define o texto do desafio (agora com o texto completo)
+        modalChallengeText.innerHTML = scenario.challengeText;
+        
+        // Define a imagem e o nome do analista
+        if (scenario.analystImage) {
+            analystImgDisplay.src = scenario.analystImage;
+            analystImgDisplay.style.display = 'block';
+        } else {
+            analystImgDisplay.style.display = 'none';
+        }
+        
+        if (scenario.analystName) {
+            analystNameDisplay.textContent = scenario.analystName;
+        } else {
+            analystNameDisplay.textContent = ''; // Limpa se não houver nome
+        }
         
         modal.style.display = 'flex';
         playSound(feedbackSound);
@@ -441,10 +428,8 @@ document.addEventListener('DOMContentLoaded', () => {
             toolbox.appendChild(draggedItem); 
             
             if (parentZone && parentZone.classList.contains('drop-zone')) {
-                const dropId = parentZone.dataset.dropId;
-                const texts = ['Princípio Primário', 'Princípio Secundário', 'Princípio Terciário'];
-                const text = texts[dropId - 1] || 'Slot';
-                parentZone.innerHTML = `<span class="drop-zone-text">${text}</span>`;
+                // Restaura o texto padrão da drop zone
+                refreshDropZonesText();
             }
             draggedItem = null;
         }
@@ -453,21 +438,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 5. LÓGICA DE VERIFICAÇÃO E NAVEGAÇÃO ---
 
-    // Botão: Iniciar Jogo (Tela 1)
     startGameBtn.addEventListener('click', () => {
         currentScenarioIndex = 0;
         loadScenario(currentScenarioIndex);
         playSound(startSound);
     });
 
-    // Botão: Continuar para o Jogo (Tela 2)
     scenarioContinueBtn.addEventListener('click', () => {
         const scenario = scenarios[currentScenarioIndex];
         setScreenElements(scenario.floatingElements, scenario.footerElements);
         showScreen('game-screen');
     });
 
-    // Botão: Analisar Resposta (Tela 3)
     checkBtn.addEventListener('click', () => {
         const scenario = scenarios[currentScenarioIndex];
         let droppedIds = [];
@@ -486,7 +468,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.principle-card').forEach(c => c.setAttribute('draggable', 'false'));
     });
 
-    // Botão: Fechar o Modal de Feedback
     closeModalBtn.addEventListener('click', () => {
         modal.style.display = 'none';
     });
@@ -515,22 +496,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     
 
-    // Botão: Próximo Nível (Tela 3)
     nextBtn.addEventListener('click', () => {
         modal.style.display = 'none'; 
         currentScenarioIndex++;
         
         if (currentScenarioIndex >= scenarios.length) {
-            // Fim de Jogo!
             showScreen('final-screen');
             playSound(finalSound); 
         } else {
-            // Próximo cenário
             loadScenario(currentScenarioIndex);
         }
     });
 
-    // Botão: Jogar Novamente (Tela 4)
     restartBtn.addEventListener('click', () => {
         showScreen('start-screen');
     });

@@ -10,9 +10,6 @@
 </head>
 <body>
 
-    <!-- ========================================================== -->
-    <!-- TELA 1: START SCREEN                                       -->
-    <!-- ========================================================== -->
     <div id="start-screen" class="screen active">
         <div class="pixel-box game-container">
             <div id="logo-placeholder">
@@ -20,10 +17,8 @@
             </div>
             
             <h1>MUNDO 1: Desafio Legal Risk</h1>
-            <!-- Atualizado para 5 desafios -->
             <p>Use os Princípios de Liderança <br> para vencer os 5 desafios!</p>
             
-            <!-- Mapa atualizado para 5 níveis -->
             <div class="game-map">
                 <div class="map-node map-start">Start</div>
                 <div class="map-path"></div>
@@ -40,13 +35,10 @@
                 <div class="map-node map-boss"><span>Boss</span></div>
             </div>
             
-            <button id="start-game-btn" class="pixel-button">Iniciar Jogo!</button>
+            <button id="start-game-btn" class="pixel-button">Iniciar jogo!</button>
         </div>
     </div>
 
-    <!-- ========================================================== -->
-    <!-- TELA 2: APRESENTAÇÃO DO CENÁRIO                            -->
-    <!-- ========================================================== -->
     <div id="scenario-screen" class="screen">
         <div class="pixel-box game-container scenario-dialog">
             <h2 id="scenario-title">Carregando Nível...</h2>
@@ -60,9 +52,6 @@
         </div>
     </div>
 
-    <!-- ========================================================== -->
-    <!-- TELA 3: O JOGO (Drag-and-Drop)                             -->
-    <!-- ========================================================== -->
     <div id="game-screen" class="screen">
         <div class="game-container"> 
             <header>
@@ -74,9 +63,9 @@
                     <h3>Mesa de decisão:</h3>
                     <p>Arraste 3 princípios-chave para cá.</p>
                     <div id="drop-zone-container">
-                        <div class="drop-zone" data-drop-id="1"></div>
-                        <div class="drop-zone" data-drop-id="2"></div>
-                        <div class="drop-zone" data-drop-id="3"></div>
+                        <div class="drop-zone" data-drop-id="1"><span class="drop-zone-text">Princípio Primário</span></div>
+                        <div class="drop-zone" data-drop-id="2"><span class="drop-zone-text">Princípio Secundário</span></div>
+                        <div class="drop-zone" data-drop-id="3"><span class="drop-zone-text">Princípio Terciário</span></div>
                     </div>
                     <button id="check-answer-btn" class="pixel-button">Analisar decisão</button>
                     <button id="next-scenario-btn" class="pixel-button" style="display: none;">Próximo nível</button>
@@ -96,9 +85,6 @@
         </div>
     </div>
 
-    <!-- ========================================================== -->
-    <!-- TELA 4: CARTA FINAL                                        -->
-    <!-- ========================================================== -->
     <div id="final-screen" class="screen">
         <div class="pixel-box game-container">
             <h2>Nós vencemos o desafio!</h2>
@@ -107,47 +93,40 @@
                 <img id="victory-gif" src="avatar-star-arcade.gif" alt="GIF de Comemoração">
             </div>
             
-            <p>Lembre-se: a mágica acontece quando usamos os princípios em conjunto. Eles são um documento vivo!</p>
+            <p>Lembre-se: a mágica acontece quando usamos os princípios em conjunto.</p>
             
             <div class="charter-text">
                 <h3>Nossos Princípios</h3>
                 <p>Aqui no Grupo QuintoAndar, acreditamos que a forma como fazemos as coisas e quem está conosco é tão importante quanto o que estamos tentando alcançar. Por isso, dedicamos tempo para criar um conjunto de princípios que nos guiam e alinham o nosso “como”.<br><br>
-                    Os Leadership Principles do Grupo QuintoAndar foram desenvolvidos para guiar a forma como queremos pensar, trabalhar, e tomar decisões. Usaremos esses princípios ao discutir ideias, buscar soluções, priorizar, contratar, promover, etc.<br><br>
-                    No GQA acreditamos no mindset de liderança aplicado a todos os níveis, seja você líder de pessoas, times ou contribuidor individual. Você é sempre um líder de si mesmo e deve sempre manter essa mentalidade. Assim, nossos princípios de liderança se aplicam a todos do GQA.<br><br>
-                    Os Leadership Principles devem sempre ser usados em conjunto, pois são complementares entre si, a sinergia entre todos é fundamental. Nenhum deles deve ser usado isoladamente, sob o risco de nos confundir. A mágica acontece quando encontramos o equilíbrio certo entre todos eles, e esse deve ser nosso objetivo a cada dia e todos os dias.<br><br>
-                    Esses princípios são um documento vivo, assim como deve ser nossa cultura. Na GQA, todos adicionam à nossa cultura, o tempo todo. Portanto, à medida que o negócio e as pessoas crescem e evoluem, nossos princípios também devem evoluir.</p>
+                    Os Leadership Principles do Grupo QuintoAndar foram desenvolvidos para guiar a forma como queremos pensar, trabalhar, e tomar decisões.<br><br>
+                    No GQA acreditamos no mindset de liderança aplicado a todos os níveis. Você é sempre um líder de si mesmo.<br><br>
+                    Os Leadership Principles devem sempre ser usados em conjunto, pois são complementares entre si. A mágica acontece quando encontramos o equilíbrio certo entre todos eles.</p>
             </div>
-            <button id="restart-game-btn" class="pixel-button">Jogar Novamente</button>
+            <button id="restart-game-btn" class="pixel-button">Jogar novamente</button>
         </div>
     </div>
 
-    <!-- ========================================================== -->
-    <!-- MODAL DE FEEDBACK                                          -->
-    <!-- ========================================================== -->
     <div id="feedback-modal" class="modal-overlay" style="display: none;">
         <div class="pixel-box modal-content">
             <span id="close-modal" class="modal-close">&times;</span>
-            <h2 id="modal-title">Análise do nível</h2>
+            <h2 id="modal-title">Feedback do time</h2>
             
             <div id="modal-feedback-header">
                 </div>
             
-            <div class="modal-flex-body">
-                <div class="modal-col-left">
+            <div class="analyst-view">
+                <div class="analyst-avatar-container">
+                    <img id="analyst-img-display" src="" alt="Analista">
+                    <p id="analyst-name-display" class="analyst-label"></p>
+                </div>
+                
+                <div class="analyst-bubble">
+                    <h4 style="margin-top:0; color:#2e628e;">Dica do especialista:</h4>
                     <div id="modal-feedback-text">
                         </div>
                     
-                    <div class="enemy-gif-area">
-                        <div class="enemy-gif-placeholder">
-                            <img id="enemy-gif-img" src="" alt="GIF do Inimigo">
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="modal-col-right">
-                    <div id="modal-enemy-box" class="enemy-box">
-                        <h4>Desafio do nível:</h4>
-                        <p id="modal-enemy-text"></p>
+                    <div class="challenge-context">
+                        <strong>Desafio do nível:</strong> <span id="modal-challenge-text"></span>
                     </div>
                 </div>
             </div>
@@ -155,9 +134,6 @@
         </div>
     </div>
     
-    <!-- ========================================================== -->
-    <!-- MODAL DE DEFINIÇÃO (INDIVIDUAL)                            -->
-    <!-- ========================================================== -->
     <div id="principle-definition-modal" class="modal-overlay" style="display: none;">
         <div class="pixel-box modal-content small">
             <span id="close-definition-modal" class="modal-close">&times;</span>
@@ -169,32 +145,17 @@
     </div>
 
 
-    <!-- ========================================================== -->
-    <!-- ARQUIVOS DE ÁUDIO                                          -->
-    <!-- ========================================================== -->
     <audio id="start-sound" src="start.wav" preload="auto"></audio>
     <audio id="feedback-sound" src="feedback.wav" preload="auto"></audio>
     <audio id="final-sound" src="final.wav" preload="auto"></audio>
 
-    <!-- ========================================================== -->
-    <!-- CONTAINERS PARA ELEMENTOS DINÂMICOS                 -->
-    <!-- ========================================================== -->
-    <div id="floating-container" class="floating-elements">
-        <!-- JS vai popular isso -->
-    </div>
+    <div id="floating-container" class="floating-elements"></div>
     
     <div id="footer-container" class="footer-elements">
-        <!-- O Chão Replicável -->
         <div id="footer-ground"></div>
-        <!-- Itens (personagens) que ficam em cima do chão -->
-        <div id="footer-items-container">
-            <!-- JS vai popular isso -->
-        </div>
+        <div id="footer-items-container"></div>
     </div>
 
-    <!-- ========================================================== -->
-    <!-- AUTORIA                                             -->
-    <!-- ========================================================== -->
     <footer class="site-credit">
         Criado por Samuel Júnior (2025)
     </footer>

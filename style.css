@@ -419,57 +419,94 @@ p {
     font-size: 0.8rem;
 }
 
-.modal-flex-body {
+/* --- NOVO LAYOUT DE ANALISTA NO MODAL --- */
+.analyst-view {
     display: flex;
-    flex-wrap: wrap; 
+    align-items: flex-start;
     gap: 20px;
+    text-align: left;
+    padding: 10px;
 }
-.modal-col-left {
-    flex: 2; 
-    min-width: 300px;
-    display: flex; 
-    flex-direction: column; 
+
+.analyst-avatar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 120px; 
 }
-.modal-col-right {
-    flex: 1; 
-    min-width: 250px;
+
+#analyst-img-display {
+    width: 100px;
+    height: 100px;
+    object-fit: cover; /* Garante que a foto não distorça se não for quadrada */
+    border-radius: 50%;
+    border: 4px solid #FBD000;
+    box-shadow: 2px 2px 0 #000;
+    background-color: #fff;
+}
+
+.analyst-label {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem;
+    color: #FBD000;
+    margin-top: 10px;
+    text-shadow: 1px 1px 0 #000;
+    text-align: center;
+    min-height: 20px; /* Garante espaço mesmo se o nome for curto */
+}
+
+.analyst-bubble {
+    background-color: #fff;
+    color: #000;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #000;
+    box-shadow: 3px 3px 0px rgba(0,0,0,0.5);
+    position: relative;
+    flex-grow: 1;
+}
+
+/* Triângulo do balão de fala */
+.analyst-bubble::before {
+    content: "";
+    position: absolute;
+    top: 30px;
+    left: -20px; /* Posiciona a seta à esquerda */
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent #000 transparent transparent; /* Seta preta (borda) */
+    display: block; 
+}
+.analyst-bubble::after {
+    content: "";
+    position: absolute;
+    top: 30px;
+    left: -16px; /* Seta branca (miolo) */
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent #fff transparent transparent;
+    display: block; 
 }
 
 #modal-feedback-text {
-    font-size: 1.3rem; 
-    text-align: left;
-    margin-bottom: 20px;
-    flex-grow: 1; 
+    font-size: 1.2rem; 
+    line-height: 1.5;
 }
 
-.enemy-box {
-    background-color: rgba(0,0,0,0.3);
-    border: 2px dashed #E52521;
-    padding: 15px;
-    text-align: left;
+/* Ajuste do texto do "desafio" que fica dentro do balão */
+.challenge-context {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px dashed #aaa;
+    font-size: 0.9em;
+    color: #555;
 }
-.enemy-box h4 {
-    color: #E52521;
-    margin-top: 0;
-    font-size: 1rem;
+.challenge-context strong {
+    color: #E52521; 
 }
-.enemy-gif-area {
-    display: flex;
-    justify-content: flex-start; 
-    margin-top: 0px;
-}
-.enemy-gif-placeholder {
-    border: 2px solid #ffffff;
-    background-color: rgba(0,0,0,0.3);
-    max-width: 120px; 
-    height: auto;
-}
-#enemy-gif-img {
-    width: 100%;
-    height: auto;
-    image-rendering: pixelated;
-    display: block;
-}
+
+/* --- FIM DO LAYOUT ANALISTA --- */
+
 
 .definitions-list {
     text-align: left;
@@ -508,6 +545,28 @@ p {
     
     .map-path { width: 40px; }
     .map-node { width: 50px; height: 50px; font-size: 1rem;}
+
+    /* Responsividade do Modal de Analista */
+    .analyst-view {
+        flex-direction: column;
+        align-items: center;
+    }
+    .analyst-bubble {
+        width: 100%;
+    }
+    /* Ajusta a seta do balão para cima no mobile */
+    .analyst-bubble::before {
+        top: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-color: transparent transparent #000 transparent;
+    }
+    .analyst-bubble::after {
+        top: -16px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-color: transparent transparent #fff transparent;
+    }
 }
 
 /* ========================================================== */
